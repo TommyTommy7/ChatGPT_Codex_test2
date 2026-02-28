@@ -1,0 +1,309 @@
+:root {
+  --bg: #eff1f5;
+  --card: #f7f7f8;
+  --line: #dfe3ea;
+  --ink: #081223;
+  --primary: #2f62df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px 0 16px;
+  border-bottom: 1px solid #d7dae1;
+  background: #fff;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: white;
+  font-size: 21px;
+  border-radius: 8px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.topbar p {
+  margin: 0;
+  color: #4a5568;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 38px 24px 54px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 0;
+  font-weight: 800;
+}
+
+.hero h2 span {
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: clamp(14px, 1.8vw, 33px);
+  margin: 8px 0 0;
+}
+
+.tab-switch {
+  width: min(420px, 100%);
+  margin: 0 auto 28px;
+  background: #d7dae1;
+  border-radius: 12px;
+  padding: 2px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tab {
+  height: 50px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #fff;
+  color: #1651e5;
+  border: 2px solid #1f2937;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(8, 18, 35, 0.06);
+}
+
+.panel {
+  display: none;
+  padding: 28px;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel h3 {
+  margin: 0 0 18px;
+  font-size: 42px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input,
+textarea {
+  border: 1px solid #c9ced8;
+  background: #f4f5f8;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 28px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 260px;
+  resize: vertical;
+}
+
+.primary-btn {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 14px;
+  height: 64px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.disabled-look {
+  background: #83afe7;
+}
+
+.helper,
+.subtext {
+  margin: 18px 0 0;
+  font-size: 20px;
+  color: #4b5563;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 28px;
+  display: none;
+}
+
+.result.visible {
+  display: block;
+}
+
+.result-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.result h3 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.result a {
+  color: #1651e5;
+  font-size: 34px;
+  text-decoration: none;
+}
+
+.status {
+  background: #cfead8;
+  color: #0f7b3d;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.summary {
+  margin-top: 20px;
+  background: #eef0f4;
+  border: 1px solid #d7dde7;
+  border-radius: 12px;
+  padding: 26px;
+  font-size: 31px;
+  line-height: 1.7;
+}
+
+.links-box {
+  margin-top: 24px;
+  border-top: 1px solid #d7dde7;
+  padding-top: 18px;
+}
+
+.links-box h4 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.links-grid a {
+  background: #e4e9f2;
+  border: 1px solid #cad2e0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.result-footer {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  color: #5b6472;
+  font-size: 19px;
+}
+
+@media (max-width: 900px) {
+  .topbar h1 {
+    font-size: 30px;
+  }
+
+  .tab,
+  .hero p,
+  .panel h3,
+  label,
+  input,
+  textarea,
+  .primary-btn,
+  .summary,
+  .result h3,
+  .result a,
+  .links-grid a {
+    font-size: clamp(16px, 2.5vw, 24px);
+  }
+
+  .input-grid,
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+
+.primary-btn:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.status.searching {
+  background: #e6ebf6;
+  color: #35538f;
+}
+
+.links-grid:empty::before {
+  content: "リンクを取得中です...";
+  color: #6b7280;
+  font-size: 20px;
+}

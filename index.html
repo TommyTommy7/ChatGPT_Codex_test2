@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speaker Scout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="logo">⌕</div>
+        <h1>Speaker Scout</h1>
+      </div>
+      <p>AI-Powered Speaker Research</p>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <h2>登壇者リサーチを<span>スマートに。</span></h2>
+        <p>手入力、またはメール本文から登壇者情報を抽出してWeb検索で調査できます。</p>
+      </section>
+
+      <div class="tab-switch" role="tablist" aria-label="入力モード切替">
+        <button id="manualTab" class="tab active" role="tab" aria-selected="true">手動入力</button>
+        <button id="mailTab" class="tab" role="tab" aria-selected="false">メールから抽出</button>
+      </div>
+
+      <section id="manualPanel" class="panel card active" role="tabpanel">
+        <h3>登壇者をリサーチする</h3>
+        <form id="manualForm">
+          <div class="input-grid">
+            <label>
+              氏名
+              <input type="text" id="speakerName" placeholder="例: 山田 太郎" required />
+            </label>
+            <label>
+              所属企業
+              <input type="text" id="companyName" placeholder="例: 株式会社テックイノベーション" required />
+            </label>
+          </div>
+          <button id="manualSubmit" type="submit" class="primary-btn">経歴・活動を調べる</button>
+        </form>
+        <p class="helper">Wikipedia APIを使って、氏名・企業名に関連する公開情報を検索し、要点をまとめて表示します。</p>
+      </section>
+
+      <section id="mailPanel" class="panel card" role="tabpanel" aria-hidden="true">
+        <h3>メールから自動抽出</h3>
+        <p class="subtext">案内メールの本文を貼り付けると、氏名/会社名らしき情報を抽出して調査します。</p>
+        <form id="mailForm">
+          <textarea id="mailBody" placeholder="ここにメール本文を貼り付けてください..." required></textarea>
+          <button id="mailSubmit" type="submit" class="primary-btn">情報を抽出して整理する</button>
+        </form>
+      </section>
+
+      <section id="resultCard" class="result card" aria-live="polite">
+        <div class="result-head">
+          <div>
+            <h3 id="resultName">-</h3>
+            <a id="resultCompany" href="#" target="_blank" rel="noopener noreferrer">-</a>
+          </div>
+          <span id="resultStatus" class="status">準備中</span>
+        </div>
+
+        <article id="summary" class="summary">ここに検索結果の要約が表示されます。</article>
+
+        <div class="links-box">
+          <h4>↗ 根拠資料・関連リンク</h4>
+          <div id="linksGrid" class="links-grid"></div>
+        </div>
+
+        <footer class="result-footer">
+          <p>※Web上の公開情報を要約しています。最終確認はリンク先を参照してください。</p>
+          <span id="charCount">文字数: 0字</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
